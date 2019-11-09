@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../../CSS/style.css" />
     <link rel="stylesheet" href="../../CSS/header.css" />
     <link rel="stylesheet" href="../../CSS/survey/content.css" />
+    <link rel="stylesheet" href="../../CSS/survey/ansverSurvey.css" />
     <link rel="stylesheet" href="../../CSS/footer.css" />
 </head>
 
@@ -34,8 +35,8 @@
             <div class="col"></div>
 
             <div class="col-md-2 user">
-                    <div class="avatar"><img class="rounded-circle" src="../../Content/image/default_avata.png" /></div>
-                    <div class="user-account dropdown">
+                <div class="avatar"><img class="rounded-circle" src="../../Content/image/default_avata.png" /></div>
+                <div class="user-account dropdown">
                     <div class="nav-link dropdown-toggle" data-toggle="dropdown">Admin</div>
                     <span class="caret"></span></button>
                     <ul class="dropdown-menu dropdown-menu-right">
@@ -66,11 +67,56 @@
 
             </div>
             <div class="row content-header">
-                <h3 id="survey_id" class="col-md text-info text-center">Phiên khảo sát ABC</h3>
             </div>
             <div class="row content mx-auto d-flex flex-column align-items-center">
                 <div class="wrap m-4 wrap-content shadow">
-                
+                    <h3 id="survey_id" class="col-md text-info text-center">Phiên khảo sát ABC</h3>
+                    <div class="">
+                        <h3 name="" class="text-secondary mt-4">Câu hỏi 1: text</h3>
+                        <label class="text-info">Trả lời:</label>
+                        <textarea name="" type="text" placeholder="trả lời"></textarea>
+
+                    </div>
+                    <div class="">
+                        <h3 name="" class="text-secondary mt-4">Câu hỏi 2: multi choice</h3>
+                        <label class="text-info">Trả lời:</label>
+                        <div class="d-flex mb-2">
+                            <input class="checkbox mr-4 my-auto" value="" name="q_2" type="checkbox" />
+                            <label class="my-auto">ans 1</label>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <input class="checkbox mr-4 my-auto" value="" name="q_2" type="checkbox" />
+                            <label class="my-auto">ans 1</label>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <input class="checkbox mr-4 my-auto" value="" name="q_2" type="checkbox" />
+                            <label class="my-auto">ans 1</label>
+                        </div>
+                    </div>
+                    <div class="">
+                        <h3 name="" class="text-secondary mt-4">Câu hỏi 3: One Answer</h3>
+                        <label class="text-info">Trả lời:</label>
+                        <div class="d-flex mb-2">
+                            <input class="checkbox mr-4 my-auto" value="" name="q_3" type="radio" />
+                            <label class="my-auto">ans 1</label>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <input class="checkbox mr-4 my-auto" value="" name="q_3" type="radio" />
+                            <label class="my-auto">ans 2</label>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <input class="checkbox mr-4 my-auto" value="" name="q_3" type="radio" />
+                            <label class="my-auto">ans 3</label>
+                        </div>
+                    </div>
+                    <div class="">
+                        <h3 name="" class="text-secondary mt-4">Câu hỏi 3: Star Answer</h3>
+                        <label class="text-info">Trả lời:</label>
+                        <div class="d-flex mb-2">
+                            <span class="star-none"></span>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         </div>
