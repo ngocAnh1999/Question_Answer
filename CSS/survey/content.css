@@ -1,0 +1,50 @@
+.body-content {
+    background-color: #E8F2F4;
+    padding: 40px 20px;
+    overflow: auto;
+    top: 55px;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+.body-content .toolbar {
+    border-bottom-color: #290808;
+    height: 45px;
+    width: 100%;
+    margin: auto 0;
+    text-align: center;
+}
+@media (min-height: 300px){
+    .body-content .content {
+        /* width: 80%; */
+        margin-top: 20px;
+        /* background-color: #fff; */
+    }
+}
+.body-content .content label {
+    width: 100px;
+}
+.body-content .content input {
+    width: 85%;
+    height: 40px;
+    margin: 2px 0;
+}
+.body-content .content textarea {
+    width: 85%;
+    height: 100px;
+    margin: 2px 0;
+}
+.body-content .content input.checkbox {
+    width: 15px;
+    height: 15px;
+    margin: auto 0;
+    margin-right: 4px;
+}
+.content .title-content {
+    margin: 8px auto;
+}
+.content .wrap {
+    width: 560px;
+    padding: 20px;
+}

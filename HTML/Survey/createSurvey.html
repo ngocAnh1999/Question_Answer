@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Survey</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../CSS/style.css" />
+    <link rel="stylesheet" href="../../CSS/header.css" />
+    <link rel="stylesheet" href="../../CSS/survey/content.css" />
+    <link rel="stylesheet" href="../../CSS/footer.css" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row header text-white">
+            <div class="col-sm-3 left">
+                <div class="genaral"></div>
+                <div class="q-a">Question & Answer</div>
+            </div>
+
+            <div class="col"></div>
+
+            <div class="col-md-2 user">
+                <div class="avatar"><img class="rounded-circle" src="../Content/image/default_avata.png" /></div>
+                <div class="user-account dropdown">
+                    <div class="nav-link dropdown-toggle" data-toggle="dropdown">Admin</div>
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li role="presentation" class="text-center"><a role="menuitem" href="#">Đăng xuất</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="body-content">
+            <div class="row toolbar font-weight-bolder border-bottom">
+                <div class="col-sm-8 h-100">
+                    <div class="row h-100">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link " href="./indexSurvey.html">Phiên của tôi</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="./unitForm.html">Tạo phiên khảo sát</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Thống kê</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md"></div>
+
+            </div>
+            <div class="row content-header">
+                <h3 id="survey_id" class="col-md text-info text-center">Phiên khảo sát ABC</h3>
+            </div>
+            <div class="row content mx-auto d-flex flex-column align-items-center">
+                    <div class="wrap m-4 wrap-content shadow" id="common">
+                            
+                            <div>
+                                <label class="text-info font-weight-bold">Chủ đề: </label>
+                                <div>
+                                    <input class="q-title" name="title" type="text" placeholder="Tiêu đề phiên" autofocus />
+                                    <span class="text-danger">&nbsp;(*)</span>
+                                </div>
+        
+                                <label class="text-info font-weight-bold">Mô tả: </label>
+                                <div class="d-flex">
+                                    <textarea id="input-common"></textarea>
+                                    <span class="text-danger ml-1">&nbsp;(*)</span>
+                                </div>
+                            </div>
+        
+                        </div>
+                <div class="wrap m-4 d-flex flex-column wrap-content shadow" id="add-question">
+                    <h3 class="title-content text-secondary font-weight-bold">Add new</h3>
+                    <div class="mx-auto">
+                        <button class="btn btn-info mx-2 my-auto">Text</button>
+                        <button class="btn btn-info mx-2 my-auto">Multi-choice</button>
+                        <button class="btn btn-info mx-2 my-auto">One Answer</button>
+                    </div>
+                </div>
+                <div class="wrap m-4 wrap-content shadow" id="common">
+                    <h3 class="text-secondary">Câu hỏi text</h3>
+                    <div>
+                        <label class="text-info font-weight-bold">Tiêu đề: </label>
+                        <div>
+                            <input class="q-title" name="title" type="text" placeholder="Tiêu đề" autofocus />
+                            <span class="text-danger">&nbsp;(*)</span>
+                        </div>
+
+                        <label class="text-info font-weight-bold">Câu hỏi: </label>
+                        <div class="d-flex">
+                            <textarea id="input-common"></textarea>
+                            <span class="text-danger ml-1">&nbsp;(*)</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="wrap m-4 wrap-content shadow" id="common">
+                    <h3 class="text-secondary">Câu hỏi multi-choice</h3>
+                    <div>
+                        <label class="text-info font-weight-bold">Tiêu đề: </label>
+                        <div>
+                            <input class="q-title" name="title" type="text" placeholder="Nhập tiêu đề" />
+                            <span class="text-danger">&nbsp;(*)</span>
+                        </div>
+                        <label class="text-info font-weight-bold">Nội dung: </label>
+                        <div>
+                            <input type="text" placeholder="Nhập câu hỏi" />
+                            <span class="text-danger">&nbsp;(*)</span>
+                        </div>
+                        <label class="text-info font-weight-bold">Trả lời: </label>
+                        <div id="add-ans"></div>
+                        <div class="mx-auto my-2">
+                            <button type="button" onclick="javascript:addMultiAnswer()"
+                                class="multi-ans btn btn-info">Thêm
+                                đáp án</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- <form action="index.html" method="post">
+                <div class="row content mx-auto d-flex flex-column">
+                    <div class="m-4 d-flex flex-column" id="common">
+                        <h3>Câu hỏi thường</h3>
+
+                        <label class="text-info font-weight-bold">Tiêu đề: </label>
+                        <div>
+
+                            <input class="q-title" name="title" type="text" placeholder="Nhập tiêu đề" autofocus />
+                            <span class="text-danger">&nbsp;(*)</span>
+                        </div>
+
+                        <label class="text-info font-weight-bold">Câu hỏi: </label>
+                        <div class="d-flex">
+                            <textarea id="input-common"></textarea>
+                            <span class="text-danger ml-1">&nbsp;(*)</span>
+                        </div>
+
+                    </div>
+                    <div class="m-4 d-none flex-column" id="multi-choice">
+                        <h3>Câu hỏi multi-choice</h3>
+                        <label class="text-info font-weight-bold">Tiêu đề: </label>
+                        <div>
+                            <input class="q-title" name="title" type="text" placeholder="Nhập tiêu đề" />
+                            <span class="text-danger">&nbsp;(*)</span>
+                        </div>
+                        <label class="text-info font-weight-bold">Nội dung: </label>
+                        <div>
+                            <input type="text" placeholder="Nhập câu hỏi" />
+                            <span class="text-danger">&nbsp;(*)</span>
+                        </div>
+                        <label class="text-info font-weight-bold">Trả lời: </label>
+                        <div id="add-ans"></div>
+                        <div class="mx-auto my-2">
+                            <button type="button" onclick="javascript:addMultiAnswer()"
+                                class="multi-ans btn btn-info">Thêm
+                                đáp án</button>
+                        </div>
+                        
+                    </div>
+                    <div class="m-4 d-none flex-column" id="evaluate">
+                        <h3>Câu hỏi đánh giá</h3>
+                        <label class="text-info font-weight-bold">Tiêu đề: </label>
+                        <div>
+                            <input class="q-title" name="title" type="text" placeholder="Nhập tiêu đề" />
+                            <span class="text-danger">&nbsp;(*)</span>
+                        </div>
+                        <label class="text-info font-weight-bold">Câu hỏi: </label>
+                        <div>
+                            <input type="text" />
+                            <span class="text-danger">&nbsp;(*)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class=" mt-4 d-flex">
+                    <button class="btn btn-info mx-auto" type="submit" disabled>Đăng câu hỏi lên diễn đàn</button>
+                </div>
+            </form> -->
+        </div>
+        <div class="footer">
+
+        </div>
+
+    </div>
+</body>
+
+</html>
