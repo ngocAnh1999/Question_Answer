@@ -1,0 +1,11 @@
+.content .wrap {
+    width: 60%;
+    padding: 20px;
+}
+.content .wrap .checkbox {
+    width: 16px;
+    height: 16px;
+}
+.content .wrap textarea {
+    min-height: 100px;
+}

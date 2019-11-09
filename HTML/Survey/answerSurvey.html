@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="../../CSS/style.css" />
     <link rel="stylesheet" href="../../CSS/header.css" />
     <link rel="stylesheet" href="../../CSS/survey/content.css" />
-    <link rel="stylesheet" href="../../CSS/survey/ansverSurvey.css" />
+    <link rel="stylesheet" href="../../CSS/survey/answerSurvey.css" />
     <link rel="stylesheet" href="../../CSS/footer.css" />
 </head>
 
@@ -66,15 +66,15 @@
             <div class="row content-header">
             </div>
             <div class="row content mx-auto d-flex flex-column align-items-center">
-                <div class="wrap m-4 wrap-content shadow">
-                    <h3 id="survey_id" class="col-md text-info text-center">Phiên khảo sát ABC</h3>
+                <form action="#" class="wrap m-4 wrap-content shadow" method="post">
+                    <h3 class="col-md text-info text-center">Tên Phiên khảo sát</h3>
                     <div class="d-flex flex-column">
-                        <h3 name="" class="text-secondary mt-4">Câu hỏi 1: text</h3>
+                        <h3 name="q_1" class="text-secondary mt-4">Câu hỏi 1: text</h3>
                         <label class="text-info">Trả lời:</label>
                         <textarea name="" type="text" placeholder="trả lời"></textarea>
                     </div>
                     <div class="">
-                        <h3 name="" class="text-secondary mt-4">Câu hỏi 2: multi choice</h3>
+                        <h3 name="q_2" class="text-secondary mt-4">Câu hỏi 2: multi choice</h3>
                         <label class="text-info">Trả lời:</label>
                         <div class="d-flex mb-2">
                             <input class="checkbox mr-4 my-auto" value="" name="q_2" type="checkbox" />
@@ -90,7 +90,7 @@
                         </div>
                     </div>
                     <div class="">
-                        <h3 name="" class="text-secondary mt-4">Câu hỏi 3: One Answer</h3>
+                        <h3 name="q_3" class="text-secondary mt-4">Câu hỏi 3: One Answer</h3>
                         <label class="text-info">Trả lời:</label>
                         <div class="d-flex mb-2">
                             <input class="checkbox mr-4 my-auto" value="" name="q_3" type="radio" />
@@ -106,14 +106,21 @@
                         </div>
                     </div>
                     <div class="">
-                        <h3 name="" class="text-secondary mt-4">Câu hỏi 3: Star Answer</h3>
+                        <h3 name="q_4" class="text-secondary mt-4">Câu hỏi 4: Star Answer</h3>
                         <label class="text-info">Trả lời:</label>
                         <div class="d-flex mb-2">
+                            <span class="star-none mr-2"></span>
+                            <span class="star-none mr-2"></span>
+                            <span class="star-none mr-2"></span>
+                            <span class="star-none mr-2"></span>
                             <span class="star-none"></span>
                         </div>
                         
                     </div>
-                </div>
+                    <div class="mt-4 d-flex">
+                        <button class="btn btn-success mx-auto" type="submit">Hoàn thành</button>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="footer">

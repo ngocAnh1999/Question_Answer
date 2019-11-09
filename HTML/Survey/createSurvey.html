@@ -17,10 +17,11 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../CSS/style.css" />
     <link rel="stylesheet" href="../../CSS/header.css" />
-    <link rel="stylesheet" href="../../CSS/survey/content.css" />
     <link rel="stylesheet" href="../../CSS/footer.css" />
+    <link rel="stylesheet" href="../../CSS/survey/content.css" />
+    <link rel="stylesheet" href="../../CSS/survey/createSurvey.css" />
+    <link rel="stylesheet" href="../../CSS/style.css" />
 </head>
 
 <body>
@@ -66,7 +67,7 @@
                 <h3 id="survey_id" class="col-md text-info text-center">Phiên khảo sát ABC</h3>
             </div>
             <div class="row content mx-auto d-flex flex-column align-items-center">
-                <div class="wrap m-4 wrap-content shadow" id="common">
+                <div class="wrap m-4 wrap-content shadow" id="survey">
 
                     <div>
                         <label class="text-info font-weight-bold">Chủ đề: </label>
@@ -86,21 +87,16 @@
                 <div class="wrap m-4 d-flex flex-column wrap-content shadow" id="add-question">
                     <h3 class="title-content text-secondary font-weight-bold">Add new</h3>
                     <div class="mx-auto">
-                        <button class="btn btn-info mx-2 my-auto">Text</button>
-                        <button class="btn btn-info mx-2 my-auto">Multi-choice</button>
-                        <button class="btn btn-info mx-2 my-auto">One Answer</button>
+                        <button onclick="javascript:createQuestion('common');" type="button" class="btn mx-2 my-auto">Text</button>
+                        <button type="button" class="btn mx-2 my-auto">Multi-choice</button>
+                        <button type="button" class="btn mx-2 my-auto">One Answer</button>
+                        <button type="button" class="btn mx-2 my-auto">Star Answer</button>
                     </div>
                 </div>
                 <div class="wrap m-4 wrap-content shadow" id="common">
                     <h3 class="text-secondary">Câu hỏi text</h3>
+                    <label class="text-info font-weight-bold">Câu hỏi&nbsp;<span name="q_1">1</span>: </label>
                     <div>
-                        <label class="text-info font-weight-bold">Tiêu đề: </label>
-                        <div>
-                            <input class="q-title" name="title" type="text" placeholder="Tiêu đề" autofocus />
-                            <span class="text-danger">&nbsp;(*)</span>
-                        </div>
-
-                        <label class="text-info font-weight-bold">Câu hỏi: </label>
                         <div class="d-flex">
                             <textarea id="input-common"></textarea>
                             <span class="text-danger ml-1">&nbsp;(*)</span>
@@ -108,20 +104,15 @@
                     </div>
 
                 </div>
-                <div class="wrap m-4 wrap-content shadow" id="common">
+                <div class="wrap m-4 wrap-content shadow" id="multi-choice">
                     <h3 class="text-secondary">Câu hỏi multi-choice</h3>
+                    <label class="text-info font-weight-bold">Câu hỏi&nbsp;<span name="q_2">2</span>: </label>
                     <div>
-                        <label class="text-info font-weight-bold">Tiêu đề: </label>
-                        <div>
-                            <input class="q-title" name="title" type="text" placeholder="Nhập tiêu đề" />
-                            <span class="text-danger">&nbsp;(*)</span>
-                        </div>
-                        <label class="text-info font-weight-bold">Nội dung: </label>
                         <div>
                             <input type="text" placeholder="Nhập câu hỏi" />
                             <span class="text-danger">&nbsp;(*)</span>
                         </div>
-                        <label class="text-info font-weight-bold">Trả lời: </label>
+                        <label class="text-info font-weight-bold">Đáp án: </label>
                         <div id="add-ans"></div>
                         <div class="mx-auto my-2">
                             <button type="button" onclick="javascript:addMultiAnswer()"
@@ -131,65 +122,43 @@
                     </div>
 
                 </div>
-            </div>
-            <!-- <form action="index.html" method="post">
-                <div class="row content mx-auto d-flex flex-column">
-                    <div class="m-4 d-flex flex-column" id="common">
-                        <h3>Câu hỏi thường</h3>
-
-                        <label class="text-info font-weight-bold">Tiêu đề: </label>
-                        <div>
-
-                            <input class="q-title" name="title" type="text" placeholder="Nhập tiêu đề" autofocus />
-                            <span class="text-danger">&nbsp;(*)</span>
-                        </div>
-
-                        <label class="text-info font-weight-bold">Câu hỏi: </label>
-                        <div class="d-flex">
-                            <textarea id="input-common"></textarea>
-                            <span class="text-danger ml-1">&nbsp;(*)</span>
-                        </div>
-
-                    </div>
-                    <div class="m-4 d-none flex-column" id="multi-choice">
-                        <h3>Câu hỏi multi-choice</h3>
-                        <label class="text-info font-weight-bold">Tiêu đề: </label>
-                        <div>
-                            <input class="q-title" name="title" type="text" placeholder="Nhập tiêu đề" />
-                            <span class="text-danger">&nbsp;(*)</span>
-                        </div>
-                        <label class="text-info font-weight-bold">Nội dung: </label>
-                        <div>
-                            <input type="text" placeholder="Nhập câu hỏi" />
-                            <span class="text-danger">&nbsp;(*)</span>
-                        </div>
-                        <label class="text-info font-weight-bold">Trả lời: </label>
-                        <div id="add-ans"></div>
-                        <div class="mx-auto my-2">
-                            <button type="button" onclick="javascript:addMultiAnswer()"
-                                class="multi-ans btn btn-info">Thêm
-                                đáp án</button>
-                        </div>
+                <div class="wrap m-4 wrap-content shadow" id="one-answer">
+                    <h3 class="text-secondary">Câu hỏi one answer</h3>
+                    <label class="text-info font-weight-bold">Câu hỏi&nbsp;<span name="q_3">3</span>: </label>
+                    <div>
                         
-                    </div>
-                    <div class="m-4 d-none flex-column" id="evaluate">
-                        <h3>Câu hỏi đánh giá</h3>
-                        <label class="text-info font-weight-bold">Tiêu đề: </label>
                         <div>
-                            <input class="q-title" name="title" type="text" placeholder="Nhập tiêu đề" />
+                            <input type="text" placeholder="Nhập câu hỏi" />
                             <span class="text-danger">&nbsp;(*)</span>
                         </div>
-                        <label class="text-info font-weight-bold">Câu hỏi: </label>
-                        <div>
-                            <input type="text" />
-                            <span class="text-danger">&nbsp;(*)</span>
+                        <label class="text-info font-weight-bold">Đáp án: </label>
+                        <div id="add-one"></div>
+                        <div class="mx-auto my-2">
+                            <button type="button" onclick="javascript:addOneAnswer()"
+                                class="multi-ans btn btn-info">Thêm
+                                đáp án</button>
                         </div>
                     </div>
+
                 </div>
-                <div class=" mt-4 d-flex">
-                    <button class="btn btn-info mx-auto" type="submit" disabled>Đăng câu hỏi lên diễn đàn</button>
-                </div>
-            </form> -->
+                <div class="wrap m-4 wrap-content shadow" id="star-answer">
+                        <h3 class="text-secondary">Câu hỏi đánh giá sao</h3>
+                        <label class="text-info font-weight-bold">Câu hỏi&nbsp;<span name="q_4">4</span>: </label>
+                        <div>
+                            <div>
+                                <input type="text" placeholder="Nhập câu hỏi" />
+                                <span class="text-danger">&nbsp;(*)</span>
+                            </div>
+                            <label class="text-info font-weight-bold">Đáp án: </label>
+                            <div class="my-2 d-flex">
+                                <input class="star" type="number" placeholder="input star" />
+                                <span class="mx-2 my-auto">/ 5</span>
+                                <span class="star-none my-auto"></span>
+                            </div>
+                        </div>
+    
+                    </div>
+            </div>
         </div>
         <div class="footer">
 

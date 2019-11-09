@@ -47,7 +47,13 @@ button {
 /* #add-question {
     height: 150px;
 } */
-#add-question button {
+#star-answer .star {
     width: 100px;
-    height: 60px;
+}
+span.star-none {
+    width: 20px;
+    height: 20px;
+    background: url('../Content/image/stars-icon-png.png') no-repeat center;
+    background-size: cover;
+    cursor: pointer;
 }

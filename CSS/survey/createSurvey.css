@@ -1,0 +1,14 @@
+#add-question button {
+    width: 80px;
+    height: 50px;
+    background-color: #20B2AA;
+    color: #FFF;
+    /* -webkit-transition: width 1s; */
+    transition-timing-function: ease-in;
+    transition: 1s;
+}
+#add-question button:hover {
+    width: 87px;
+    background-color: #008080;
+    font-weight: bold;
+}
