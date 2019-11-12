@@ -12,6 +12,14 @@
     padding-right: 0;
     padding-left: 0;
 }
+.header .quanly {
+    float: right;
+    cursor: pointer;
+    background-color: #F4A460;
+}
+.header .dropdown-toggle::after {
+    margin: auto 4px;
+}
 .header .left {
     display: flex;
 }
