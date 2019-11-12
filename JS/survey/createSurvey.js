@@ -1,5 +1,8 @@
-function createQuestion(question_id) {
+let q_count = 0;
+
+function createQuestion(question_name) {
     debugger
+    
 }
 function addMultiAnswer() {
     debugger
