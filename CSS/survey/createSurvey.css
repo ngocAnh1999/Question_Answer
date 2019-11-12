@@ -12,3 +12,12 @@
     background-color: #008080;
     font-weight: bold;
 }
+.wrap label {
+    margin-top: 4px;
+}
+.wrap .wrap-remove:hover {
+    cursor: pointer;
+}
+.wrap input.star {
+    width: 100px;
+}
